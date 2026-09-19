@@ -46,19 +46,19 @@
 
   <style>
     :root {
-      --bg-grad-1: #1e1b4b;
-      --bg-grad-2: #2e1065;
-      --bg-grad-3: #0f172a;
-      --accent-glow: rgba(147, 51, 234, 0.35);
-      --glass-bg: rgba(255, 255, 255, 0.08);
-      --glass-border: rgba(255, 255, 255, 0.16);
-      --glass-border-focus: rgba(255, 255, 255, 0.35);
+      --bg-grad-1: #1a1e2e;
+      --bg-grad-2: #242436;
+      --bg-grad-3: #0e121a;
+      --accent-glow: rgba(99, 102, 241, 0.16);
+      --glass-bg: rgba(25, 30, 44, 0.55);
+      --glass-border: rgba(255, 255, 255, 0.08);
+      --glass-border-focus: rgba(255, 255, 255, 0.22);
     }
 
     body {
       background-color: var(--bg-grad-3);
       min-height: 100vh;
-      color: #f8fafc;
+      color: #f1f5f9;
       font-family: 'Zen Kaku Gothic New', sans-serif;
       transition: background-color 1.2s ease;
       overflow-x: hidden;
@@ -80,10 +80,10 @@
     .ambient-orb {
       position: absolute;
       border-radius: 50%;
-      filter: blur(80px);
-      opacity: 0.65;
+      filter: blur(85px);
+      opacity: 0.55;
       transition: all 1.8s cubic-bezier(0.4, 0, 0.2, 1);
-      animation: floatMotion 16s ease-in-out infinite alternate;
+      animation: floatMotion 18s ease-in-out infinite alternate;
     }
 
     .orb-1 {
@@ -114,53 +114,53 @@
 
     @keyframes floatMotion {
       0% { transform: translate(0, 0) scale(1); }
-      50% { transform: translate(25px, 35px) scale(1.08); }
-      100% { transform: translate(-30px, -20px) scale(0.95); }
+      50% { transform: translate(20px, 30px) scale(1.05); }
+      100% { transform: translate(-25px, -15px) scale(0.96); }
     }
 
     /* Glassmorphism containers */
     .glass-panel {
       background: var(--glass-bg);
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
       border: 1px solid var(--glass-border);
-      box-shadow: 0 16px 36px 0 rgba(0, 0, 0, 0.32),
-                  inset 0 1px 1px 0 rgba(255, 255, 255, 0.15);
+      box-shadow: 0 16px 36px 0 rgba(0, 0, 0, 0.4),
+                  inset 0 1px 1px 0 rgba(255, 255, 255, 0.08);
     }
 
     .glass-input {
-      background: rgba(255, 255, 255, 0.12);
+      background: rgba(15, 20, 32, 0.5);
       backdrop-filter: blur(10px);
-      border: 1px solid var(--glass-border);
-      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #f1f5f9;
       outline: none;
       transition: all 0.2s ease;
     }
 
     .glass-input:focus {
       border-color: var(--glass-border-focus);
-      background: rgba(255, 255, 255, 0.18);
-      box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+      background: rgba(20, 26, 42, 0.65);
+      box-shadow: 0 0 12px rgba(255, 255, 255, 0.08);
     }
 
     .glass-input option {
-      background-color: #1e1b4b;
-      color: #ffffff;
+      background-color: #161a26;
+      color: #f1f5f9;
     }
 
     /* Umbrella icon floating pulse */
     .umbrella-float {
-      animation: gentleBob 3.5s ease-in-out infinite;
+      animation: gentleBob 4s ease-in-out infinite;
     }
 
     @keyframes gentleBob {
       0%, 100% { transform: translateY(0px) rotate(0deg); }
-      50% { transform: translateY(-7px) rotate(-1.5deg); }
+      50% { transform: translateY(-5px) rotate(-1deg); }
     }
 
-    /* Dynamic SVG Glow */
-    .icon-glow {
-      filter: drop-shadow(0 6px 16px rgba(168, 85, 247, 0.45));
+    /* Subtle Chic Drop Shadow */
+    .icon-chic {
+      filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.35));
     }
   </style>
 </head>
@@ -177,18 +177,18 @@
 
     <!-- Header / Brand -->
     <header class="text-center pt-2 pb-1">
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-xs text-purple-200 tracking-wider font-semibold shadow-sm mb-1.5">
-        <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 backdrop-blur-md border border-white/10 text-xs text-slate-300 tracking-wider font-semibold shadow-sm mb-1.5">
+        <svg class="w-3.5 h-3.5 text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M22 12a10.06 10.06 0 0 0-20 0Z"/>
           <path d="M12 12v8a2 2 0 0 0 4 0"/>
           <path d="M12 2v1"/>
         </svg>
         UMBRELLA CHECKER
       </div>
-      <h1 class="text-2xl sm:text-3xl font-black tracking-tight text-white drop-shadow-md">
-        おでかけ傘チェッカー
+      <h1 class="text-2xl sm:text-3xl font-black tracking-tight text-white drop-shadow">
+        【おでかけ傘チェッカー】
       </h1>
-      <p class="text-xs sm:text-sm text-slate-300 font-medium mt-0.5">
+      <p class="text-xs sm:text-sm text-slate-400 font-medium mt-0.5">
         直近6時間の雨リスクを判定してお知らせします
       </p>
     </header>
@@ -198,12 +198,12 @@
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
         <!-- Prefecture Select -->
         <div class="flex flex-col gap-1">
-          <label for="prefSelect" class="text-xs font-semibold text-slate-300 pl-1">都道府県</label>
+          <label for="prefSelect" class="text-xs font-semibold text-slate-400 pl-1">都道府県:</label>
           <div class="relative">
-            <select id="prefSelect" class="glass-input w-full rounded-xl px-3 py-2.5 text-sm appearance-none cursor-pointer focus:ring-1 focus:ring-purple-300">
+            <select id="prefSelect" class="glass-input w-full rounded-xl px-3 py-2.5 text-sm appearance-none cursor-pointer focus:ring-1 focus:ring-slate-400">
               <!-- Dynamically populated -->
             </select>
-            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-slate-300">
+            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-slate-400">
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/>
               </svg>
@@ -213,24 +213,24 @@
 
         <!-- City/Ward Input -->
         <div class="flex flex-col gap-1">
-          <label for="cityInput" class="text-xs font-semibold text-slate-300 pl-1">市区町村</label>
+          <label for="cityInput" class="text-xs font-semibold text-slate-400 pl-1">市区町村:</label>
           <input 
             type="text" 
             id="cityInput" 
             value="新宿区" 
             placeholder="例: 新宿区、博多区、中央区" 
-            class="glass-input w-full rounded-xl px-3 py-2.5 text-sm placeholder-slate-400"
+            class="glass-input w-full rounded-xl px-3 py-2.5 text-sm placeholder-slate-500"
             maxlength="25"
             autocomplete="off"
           />
         </div>
       </div>
 
-      <!-- Action Button -->
+      <!-- Action Button (Chic & Simple) -->
       <button 
         id="searchBtn" 
-        class="w-full mt-1 bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-600 hover:from-blue-400 hover:via-indigo-400 hover:to-purple-500 text-white font-bold py-2.5 rounded-xl shadow-lg shadow-indigo-900/40 active:scale-[0.98] transition-all duration-200 flex items-center justify-center gap-2 text-sm tracking-wide">
-        <svg id="btnIcon" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        class="w-full mt-1 bg-slate-700/70 hover:bg-slate-600/80 border border-white/10 text-slate-100 font-semibold py-2.5 rounded-xl shadow-md active:scale-[0.98] transition-all duration-200 flex items-center justify-center gap-2 text-sm tracking-wide">
+        <svg id="btnIcon" class="w-4 h-4 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
         </svg>
         <span id="btnText">天気を調べる</span>
@@ -242,11 +242,11 @@
 
     <!-- Main Result Card -->
     <section id="resultCard" class="glass-panel rounded-3xl p-6 text-center flex flex-col items-center justify-center relative overflow-hidden transition-all duration-500 min-h-[230px]">
-      <div id="cardGlow" class="absolute w-44 h-44 rounded-full bg-purple-500/20 blur-3xl pointer-events-none -top-10 -right-10"></div>
+      <div id="cardGlow" class="absolute w-44 h-44 rounded-full bg-slate-500/10 blur-3xl pointer-events-none -top-10 -right-10"></div>
 
       <!-- Location Badge -->
-      <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 text-xs text-slate-200 font-medium mb-2">
-        <svg class="w-3.5 h-3.5 text-purple-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs text-slate-300 font-medium mb-2">
+        <svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
         </svg>
@@ -260,10 +260,10 @@
 
       <!-- Main Umbrella Verdict -->
       <h2 id="verdictTitle" class="text-2xl sm:text-3xl font-black text-white tracking-wide mt-2">
-        傘を必ず持っていこう！
+        傘を持っていくべき！
       </h2>
-      <p id="verdictSub" class="text-sm font-semibold text-purple-200/90 mt-1">
-        向こう6時間の降水確率: 最大 <span id="verdictProb" class="text-white text-lg font-black">70%</span> <span id="verdictNote" class="text-xs text-purple-200">（雨具の用意を）</span>
+      <p id="verdictSub" class="text-sm font-semibold text-slate-300 mt-1">
+        向こう6時間の降水確率: 最大 <span id="verdictProb" class="text-white text-lg font-black">70%</span> <span id="verdictNote" class="text-xs text-slate-400">（雨具の用意を）</span>
       </p>
     </section>
 
@@ -271,10 +271,7 @@
     <section class="glass-panel rounded-2xl p-4 flex flex-col gap-2.5">
       <div class="flex items-center justify-between px-1">
         <h3 class="text-xs font-bold tracking-wider text-slate-300 flex items-center gap-1.5">
-          <svg class="w-3.5 h-3.5 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
-          </svg>
-          直近6時間の空模様
+          <span class="text-slate-400">▼</span> 直近6時間の空模様
         </h3>
         <span class="text-[11px] text-slate-400 font-medium" id="currentTimeRange">--:-- 〜 --:--</span>
       </div>
@@ -288,32 +285,29 @@
     <section class="glass-panel rounded-2xl p-4 flex flex-col gap-2">
       <div class="flex items-center justify-between px-1">
         <h3 class="text-xs font-bold tracking-wider text-slate-300 flex items-center gap-1.5">
-          <svg class="w-3.5 h-3.5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-          </svg>
-          明日の天気
+          <span class="text-slate-400">▼</span> 明日の天気
         </h3>
-        <span id="tomorrowDate" class="text-xs text-slate-300 font-medium">明日 (--月--日)</span>
+        <span id="tomorrowDate" class="text-xs text-slate-400 font-medium">明日 (--月--日)</span>
       </div>
 
-      <div class="flex items-center justify-between bg-white/5 rounded-xl p-3 border border-white/10">
+      <div class="flex items-center justify-between bg-white/[0.03] rounded-xl p-3 border border-white/[0.06]">
         <div class="flex items-center gap-3">
           <div id="tomorrowIcon" class="w-11 h-11 flex items-center justify-center">
             <!-- Injected SVG -->
           </div>
           <div>
             <p id="tomorrowSummary" class="text-sm font-bold text-white leading-snug">晴れ時々曇り</p>
-            <p class="text-xs text-slate-300 font-medium mt-0.5">
-              降水確率: 最大 <span id="tomorrowProb" class="font-bold text-sky-300">10%</span>
+            <p class="text-xs text-slate-400 font-medium mt-0.5">
+              降水確率: 最大 <span id="tomorrowProb" class="font-bold text-slate-200">10%</span>
             </p>
           </div>
         </div>
 
         <div class="text-right">
           <div class="text-sm font-bold">
-            <span id="tomorrowMaxTemp" class="text-rose-300 font-black">24℃</span>
-            <span class="text-slate-400 font-light mx-1">/</span>
-            <span id="tomorrowMinTemp" class="text-sky-300 font-black">16℃</span>
+            <span id="tomorrowMaxTemp" class="text-slate-200 font-black">24℃</span>
+            <span class="text-slate-500 font-light mx-1">/</span>
+            <span id="tomorrowMinTemp" class="text-slate-400 font-black">16℃</span>
           </div>
           <span class="text-[10px] text-slate-400 font-medium">最高 / 最低</span>
         </div>
@@ -321,8 +315,8 @@
     </section>
 
     <!-- Footer Credit -->
-    <footer class="text-center text-[11px] text-slate-400/80 pb-3">
-      気象データ: <a href="https://open-meteo.com/" target="_blank" rel="noopener noreferrer" class="underline hover:text-white transition-colors">Open-Meteo API</a> (非商用・商用無料)
+    <footer class="text-center text-[11px] text-slate-500 pb-3">
+      気象データ: <a href="https://open-meteo.com/" target="_blank" rel="noopener noreferrer" class="underline hover:text-slate-300 transition-colors">Open-Meteo API</a> (非商用・商用無料)
     </footer>
 
   </main>
@@ -379,34 +373,30 @@
       { name: "沖縄県", lat: 26.2124, lon: 127.6809, city: "那覇市" }
     ];
 
-    /* Self-contained SVG Icons */
+    /* Chic / Ambient SVG Icons matching mockup specifications */
     function getUmbrellaSVG(size = 92) {
       return `
-        <svg class="icon-glow" width="${size}" height="${size}" viewBox="0 0 100 100" fill="none">
+        <svg class="icon-chic" width="${size}" height="${size}" viewBox="0 0 100 100" fill="none">
           <defs>
-            <linearGradient id="main-umb-grad" x1="10%" y1="10%" x2="90%" y2="90%">
-              <stop offset="0%" stop-color="#93c5fd" />
-              <stop offset="45%" stop-color="#c084fc" />
-              <stop offset="100%" stop-color="#f472b6" />
+            <linearGradient id="chic-umb-grad" x1="20%" y1="0%" x2="80%" y2="100%">
+              <stop offset="0%" stop-color="#9aa2b4" />
+              <stop offset="50%" stop-color="#838c9e" />
+              <stop offset="100%" stop-color="#6a7283" />
             </linearGradient>
-            <linearGradient id="rain-drop-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#67e8f9" />
-              <stop offset="100%" stop-color="#3b82f6" />
+            <linearGradient id="chic-drop-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#a4acc0" />
+              <stop offset="100%" stop-color="#737c8e" />
             </linearGradient>
-            <filter id="glow-filter" x="-20%" y="-20%" width="140%" height="140%">
-              <feDropShadow dx="0" dy="6" stdDeviation="5" flood-color="#a855f7" flood-opacity="0.45"/>
-            </filter>
           </defs>
-          <path d="M73 18 C73 14, 76 11, 76 11 C76 11, 79 14, 79 18 C79 20.5, 77 22, 76 22 C75 22, 73 20.5, 73 18 Z" fill="url(#rain-drop-grad)"/>
-          <path d="M59 12 C59 9, 62 6, 62 6 C62 6, 65 9, 65 12 C65 14, 63.5 15.5, 62 15.5 C60.5 15.5, 59 14, 59 12 Z" fill="url(#rain-drop-grad)"/>
-          <path d="M26 20 C26 17, 29 14, 29 14 C29 14, 32 17, 32 20 C32 22, 30.5 23.5, 29 23.5 C27.5 23.5, 26 22, 26 20 Z" fill="url(#rain-drop-grad)"/>
-          <path d="M50 16 L50 22" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
+          <path d="M72 17 C72 13.5, 75 11, 75 11 C75 11, 78 13.5, 78 17 C78 19.5, 76 21, 75 21 C74 21, 72 19.5, 72 17 Z" fill="url(#chic-drop-grad)"/>
+          <path d="M59 12 C59 9, 62 6.5, 62 6.5 C62 6.5, 65 9, 65 12 C65 14, 63.5 15.5, 62 15.5 C60.5 15.5, 59 14, 59 12 Z" fill="url(#chic-drop-grad)"/>
+          <path d="M28 20 C28 17, 31 14.5, 31 14.5 C31 14.5, 34 17, 34 20 C34 22, 32.5 23.5, 31 23.5 C29.5 23.5, 28 22, 28 20 Z" fill="url(#chic-drop-grad)"/>
+          <path d="M50 16 L50 22" stroke="#6a7283" stroke-width="2.5" stroke-linecap="round"/>
           <path d="M14 52 C14 31 30 18 50 18 C70 18 86 31 86 52 C81 49 75 51 68 51 C61 51 56 48 50 48 C44 48 39 51 32 51 C25 51 19 49 14 52 Z" 
-                fill="url(#main-umb-grad)" 
-                filter="url(#glow-filter)"/>
-          <path d="M22 47 C24 35 35 24 50 23" stroke="rgba(255,255,255,0.45)" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+                fill="url(#chic-umb-grad)"/>
+          <path d="M22 47 C24 36 35 24 50 23" stroke="rgba(255,255,255,0.22)" stroke-width="2" stroke-linecap="round" fill="none"/>
           <path d="M50 50 L50 73 C50 78.5 45.5 83 40 83 C34.5 83 31 78.5 32 73" 
-                stroke="#ffffff" 
+                stroke="#636b7b" 
                 stroke-width="5" 
                 stroke-linecap="round" 
                 stroke-linejoin="round"
@@ -417,49 +407,44 @@
 
     function getFoldableUmbrellaSVG(size = 88) {
       return `
-        <svg class="icon-glow" width="${size}" height="${size}" viewBox="0 0 100 100" fill="none">
+        <svg class="icon-chic" width="${size}" height="${size}" viewBox="0 0 100 100" fill="none">
           <defs>
-            <linearGradient id="fold-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#38bdf8" />
-              <stop offset="50%" stop-color="#818cf8" />
-              <stop offset="100%" stop-color="#c084fc" />
+            <linearGradient id="chic-fold-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#9aa2b4" />
+              <stop offset="100%" stop-color="#6a7283" />
             </linearGradient>
-            <filter id="fold-filter">
-              <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#818cf8" flood-opacity="0.4"/>
-            </filter>
           </defs>
           <path d="M20 48 C25 31 40 22 55 20 C70 19 82 28 84 45 C78 43 72 46 66 45 C60 44 55 42 50 42 C44 42 39 45 33 45 C27 45 23 43 20 48 Z" 
-                fill="url(#fold-grad)" 
-                filter="url(#fold-filter)"/>
+                fill="url(#chic-fold-grad)"/>
           <path d="M52 43 L37 72 C35.5 74.5 32 76 29 74.5 C26 73 25 69.5 27 66.5 L30 60" 
-                stroke="#ffffff" 
+                stroke="#636b7b" 
                 stroke-width="4.5" 
                 stroke-linecap="round" 
                 fill="none"/>
-          <circle cx="27" cy="74" r="3.5" fill="#f472b6" />
+          <circle cx="27" cy="74" r="3" fill="#838c9e" />
         </svg>
       `;
     }
 
     function getSunSVG(size = 86) {
       return `
-        <svg class="icon-glow" width="${size}" height="${size}" viewBox="0 0 100 100" fill="none">
+        <svg class="icon-chic" width="${size}" height="${size}" viewBox="0 0 100 100" fill="none">
           <defs>
-            <linearGradient id="sun-body-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <linearGradient id="chic-sun-grad" x1="0%" y1="0%" x2="100%" y2="100%">
               <stop offset="0%" stop-color="#fde047" />
-              <stop offset="100%" stop-color="#f97316" />
+              <stop offset="100%" stop-color="#f59e0b" />
             </linearGradient>
           </defs>
-          <circle cx="50" cy="50" r="23" fill="url(#sun-body-grad)" filter="drop-shadow(0 0 16px rgba(251, 146, 60, 0.65))"/>
-          <g stroke="url(#sun-body-grad)" stroke-width="4" stroke-linecap="round">
-            <line x1="50" y1="12" x2="50" y2="20" />
-            <line x1="50" y1="80" x2="50" y2="88" />
-            <line x1="12" y1="50" x2="20" y2="50" />
-            <line x1="80" y1="50" x2="88" y2="50" />
-            <line x1="23" y1="23" x2="29" y2="29" />
-            <line x1="71" y1="71" x2="77" y2="77" />
-            <line x1="23" y1="77" x2="29" y2="71" />
-            <line x1="71" y1="29" x2="77" y2="23" />
+          <circle cx="50" cy="50" r="22" fill="url(#chic-sun-grad)" filter="drop-shadow(0 2px 8px rgba(245, 158, 11, 0.35))"/>
+          <g stroke="#f59e0b" stroke-width="3.5" stroke-linecap="round" opacity="0.9">
+            <line x1="50" y1="14" x2="50" y2="21" />
+            <line x1="50" y1="79" x2="50" y2="86" />
+            <line x1="14" y1="50" x2="21" y2="50" />
+            <line x1="79" y1="50" x2="86" y2="50" />
+            <line x1="24" y1="24" x2="29" y2="29" />
+            <line x1="71" y1="71" x2="76" y2="76" />
+            <line x1="24" y1="76" x2="29" y2="71" />
+            <line x1="71" y1="29" x2="76" y2="24" />
           </g>
         </svg>
       `;
@@ -470,28 +455,31 @@
       const defs = `
         <defs>
           <linearGradient id="sun-${uid}" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#fef08a" />
-            <stop offset="100%" stop-color="#f97316" />
+            <stop offset="0%" stop-color="#fde68a" />
+            <stop offset="100%" stop-color="#f59e0b" />
           </linearGradient>
-          <linearGradient id="cloud-${uid}" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#ffffff" />
-            <stop offset="60%" stop-color="#cbd5e1" />
-            <stop offset="100%" stop-color="#94a3b8" />
+          <!-- Muted natural cloud gradient without artificial glow -->
+          <linearGradient id="cloud-${uid}" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#94a3b8" />
+            <stop offset="100%" stop-color="#64748b" />
           </linearGradient>
-          <linearGradient id="raincloud-${uid}" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#cbd5e1" />
-            <stop offset="60%" stop-color="#94a3b8" />
+          <linearGradient id="raincloud-${uid}" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#64748b" />
+            <stop offset="100%" stop-color="#475569" />
+          </linearGradient>
+          <linearGradient id="rain-drop-${uid}" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#94a3b8" />
             <stop offset="100%" stop-color="#64748b" />
           </linearGradient>
         </defs>
       `;
 
-      // Clear (0, 1)
+      // Clear (0, 1) - Sunny / Bright
       if (code === 0 || code === 1) {
         if (!isDay) {
           return `
             <svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none">
-              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="#fef08a" stroke="#facc15" stroke-width="1.2"/>
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="#fde68a" stroke="#d97706" stroke-width="1.2"/>
             </svg>
           `;
         }
@@ -512,7 +500,7 @@
           </svg>
         `;
       } 
-      // Partly cloudy (2, 3)
+      // Partly cloudy (2, 3) - Sun peeking behind natural cloud
       else if (code === 2 || code === 3) {
         return `
           <svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none">
@@ -520,32 +508,31 @@
             <circle cx="15.5" cy="8.5" r="3.5" fill="url(#sun-${uid})"/>
             <path d="M17.5 18H7a4 4 0 0 1-.8-7.92 5 5 0 0 1 9.6-1.38A3.5 3.5 0 0 1 17.5 18Z" 
                   fill="url(#cloud-${uid})" 
-                  stroke="rgba(255,255,255,0.4)" 
+                  stroke="rgba(255,255,255,0.15)" 
                   stroke-width="0.8"/>
           </svg>
         `;
       } 
-      // Rain / Showers (51-67, 80-82)
+      // Rain / Showers (51-67, 80-82) - Matches the umbrella icon colorway
       else if ((code >= 51 && code <= 67) || (code >= 80 && code <= 82)) {
         return `
           <svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none">
             ${defs}
-            <path d="M17 13.5H7a3.5 3.5 0 0 1-.7-6.93 4.5 4.5 0 0 1 8.6-1.15A3 3 0 0 1 17 13.5Z" 
-                  fill="url(#raincloud-${uid})" 
-                  stroke="rgba(255,255,255,0.3)" 
-                  stroke-width="0.8"/>
-            <line x1="8" y1="16" x2="6.5" y2="19.5" stroke="#38bdf8" stroke-width="2" stroke-linecap="round"/>
-            <line x1="12" y1="16" x2="10.5" y2="19.5" stroke="#38bdf8" stroke-width="2" stroke-linecap="round"/>
-            <line x1="16" y1="16" x2="14.5" y2="19.5" stroke="#38bdf8" stroke-width="2" stroke-linecap="round"/>
+            <path d="M19 11.5 C19 8.2 16.2 6 12 6 C7.8 6 5 8.2 5 11.5 C4 11.5 3 12.2 3 13.5 C3 14.8 4.2 15.5 5.5 15.5 C6.5 15 7.5 15 8.5 15 C9.5 15 10.5 14.2 12 14.2 C13.5 14.2 14.5 15 15.5 15 C16.5 15 17.5 15 18.5 15.5 C19.8 15.5 21 14.8 21 13.5 C21 12.2 20 11.5 19 11.5 Z" 
+                  fill="url(#raincloud-${uid})"/>
+            <path d="M12 14 L12 19 C12 20.2 11 21 9.8 21 C8.6 21 8 20.2 8.2 19" stroke="#64748b" stroke-width="1.6" stroke-linecap="round" fill="none"/>
+            <line x1="6" y1="3" x2="6.5" y2="4.5" stroke="#94a3b8" stroke-width="1.4" stroke-linecap="round"/>
+            <line x1="12" y1="2" x2="12" y2="3.8" stroke="#94a3b8" stroke-width="1.4" stroke-linecap="round"/>
+            <line x1="18" y1="3" x2="17.5" y2="4.5" stroke="#94a3b8" stroke-width="1.4" stroke-linecap="round"/>
           </svg>
         `;
       } 
       // Snow (71-77, 85, 86)
       else if ((code >= 71 && code <= 77) || code === 85 || code === 86) {
         return `
-          <svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="#bae6fd" stroke-width="1.8" stroke-linecap="round">
+          <svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.8" stroke-linecap="round">
             <path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M5.6 18.4L18.4 5.6"/>
-            <circle cx="12" cy="12" r="1.5" fill="#ffffff"/>
+            <circle cx="12" cy="12" r="1.5" fill="#cbd5e1"/>
           </svg>
         `;
       } 
@@ -555,16 +542,16 @@
           <svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none">
             ${defs}
             <path d="M17 13H7a3.5 3.5 0 0 1-.7-6.93 4.5 4.5 0 0 1 8.6-1.15A3 3 0 0 1 17 13Z" fill="url(#raincloud-${uid})"/>
-            <polygon points="12 13 9 17.5 12.5 17.5 11 22 15.5 16 12.5 16 13.5 13" fill="#fbbf24"/>
+            <polygon points="12 13 9 17.5 12.5 17.5 11 22 15.5 16 12.5 16 13.5 13" fill="#f59e0b"/>
           </svg>
         `;
       } 
-      // Overcast / Fog
+      // Overcast / Fog - Muted natural tone
       else {
         return `
           <svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none">
             ${defs}
-            <path d="M17.5 17H7a4.5 4.5 0 0 1-.8-8.93 5.5 5.5 0 0 1 10.6-1.57A4 4 0 0 1 17.5 17Z" fill="url(#cloud-${uid})"/>
+            <path d="M17.5 17H7a4.5 4.5 0 0 1-.8-8.93 5.5 5.5 0 0 1 10.6-1.57A4 4 0 0 1 17.5 17Z" fill="url(#cloud-${uid})" stroke="rgba(255,255,255,0.1)" stroke-width="0.8"/>
           </svg>
         `;
       }
@@ -590,23 +577,23 @@
       const cardGlow = document.getElementById('cardGlow');
 
       if (status === 'rain') {
-        root.style.setProperty('--bg-grad-1', '#1e1b4b');
-        root.style.setProperty('--bg-grad-2', '#311042');
-        root.style.setProperty('--bg-grad-3', '#0b0f19');
-        root.style.setProperty('--accent-glow', 'rgba(99, 102, 241, 0.4)');
-        if (cardGlow) cardGlow.className = "absolute w-48 h-48 rounded-full bg-indigo-500/25 blur-3xl pointer-events-none -top-10 -right-10";
+        root.style.setProperty('--bg-grad-1', '#181e2b');
+        root.style.setProperty('--bg-grad-2', '#212634');
+        root.style.setProperty('--bg-grad-3', '#0d1117');
+        root.style.setProperty('--accent-glow', 'rgba(100, 116, 139, 0.18)');
+        if (cardGlow) cardGlow.className = "absolute w-48 h-48 rounded-full bg-slate-600/15 blur-3xl pointer-events-none -top-10 -right-10";
       } else if (status === 'cloudy') {
-        root.style.setProperty('--bg-grad-1', '#1e293b');
-        root.style.setProperty('--bg-grad-2', '#282538');
-        root.style.setProperty('--bg-grad-3', '#0f172a');
-        root.style.setProperty('--accent-glow', 'rgba(148, 163, 184, 0.35)');
-        if (cardGlow) cardGlow.className = "absolute w-48 h-48 rounded-full bg-cyan-600/20 blur-3xl pointer-events-none -top-10 -right-10";
+        root.style.setProperty('--bg-grad-1', '#1a202c');
+        root.style.setProperty('--bg-grad-2', '#222836');
+        root.style.setProperty('--bg-grad-3', '#0e1219');
+        root.style.setProperty('--accent-glow', 'rgba(148, 163, 184, 0.16)');
+        if (cardGlow) cardGlow.className = "absolute w-48 h-48 rounded-full bg-slate-500/15 blur-3xl pointer-events-none -top-10 -right-10";
       } else {
-        root.style.setProperty('--bg-grad-1', '#1e1b4b');
-        root.style.setProperty('--bg-grad-2', '#451a03');
-        root.style.setProperty('--bg-grad-3', '#0c1020');
-        root.style.setProperty('--accent-glow', 'rgba(245, 158, 11, 0.35)');
-        if (cardGlow) cardGlow.className = "absolute w-48 h-48 rounded-full bg-amber-500/20 blur-3xl pointer-events-none -top-10 -right-10";
+        root.style.setProperty('--bg-grad-1', '#1a2233');
+        root.style.setProperty('--bg-grad-2', '#272a38');
+        root.style.setProperty('--bg-grad-3', '#0d1118');
+        root.style.setProperty('--accent-glow', 'rgba(245, 158, 11, 0.12)');
+        if (cardGlow) cardGlow.className = "absolute w-48 h-48 rounded-full bg-amber-500/10 blur-3xl pointer-events-none -top-10 -right-10";
       }
     }
 
@@ -725,7 +712,7 @@
       if (maxProb >= 50) {
         if (verdictTitle) {
           verdictTitle.textContent = "傘を持っていくべき！";
-          verdictTitle.className = "text-2xl sm:text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-pink-300 via-purple-200 to-indigo-200 tracking-wide mt-2 drop-shadow";
+          verdictTitle.className = "text-2xl sm:text-3xl font-black text-white tracking-wide mt-2 drop-shadow";
         }
         if (verdictNote) verdictNote.textContent = "（雨具の用意を）";
         if (heroIconContainer) heroIconContainer.innerHTML = getUmbrellaSVG(92);
@@ -733,7 +720,7 @@
       } else if (maxProb >= 20) {
         if (verdictTitle) {
           verdictTitle.textContent = "折りたたみ傘があると安心！";
-          verdictTitle.className = "text-2xl sm:text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-sky-200 via-indigo-200 to-pink-200 tracking-wide mt-2 drop-shadow";
+          verdictTitle.className = "text-2xl sm:text-3xl font-black text-white tracking-wide mt-2 drop-shadow";
         }
         if (verdictNote) verdictNote.textContent = "（念のため携帯推奨）";
         if (heroIconContainer) heroIconContainer.innerHTML = getFoldableUmbrellaSVG(88);
@@ -741,7 +728,7 @@
       } else {
         if (verdictTitle) {
           verdictTitle.textContent = "傘はいりません！";
-          verdictTitle.className = "text-2xl sm:text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-orange-200 to-yellow-100 tracking-wide mt-2 drop-shadow";
+          verdictTitle.className = "text-2xl sm:text-3xl font-black text-white tracking-wide mt-2 drop-shadow";
         }
         if (verdictNote) verdictNote.textContent = "（安心してお出かけ）";
         if (heroIconContainer) heroIconContainer.innerHTML = getSunSVG(86);
@@ -760,23 +747,23 @@
         hourlyTimeline.innerHTML = '';
         next6Hours.forEach(item => {
           const col = document.createElement('div');
-          col.className = "flex flex-col items-center bg-white/5 hover:bg-white/10 rounded-xl p-2 sm:p-2.5 transition-all border border-white/5";
+          col.className = "flex flex-col items-center bg-white/[0.03] hover:bg-white/[0.07] rounded-xl p-2 sm:p-2.5 transition-all border border-white/[0.05]";
 
           const barHeight = Math.max(4, Math.min(100, item.prob));
-          let barColor = "bg-sky-400";
-          if (item.prob >= 50) barColor = "bg-gradient-to-t from-indigo-500 to-pink-400";
-          else if (item.prob >= 20) barColor = "bg-gradient-to-t from-sky-400 to-indigo-400";
+          let barColor = "bg-slate-500";
+          if (item.prob >= 50) barColor = "bg-slate-400";
+          else if (item.prob >= 20) barColor = "bg-slate-500";
 
           col.innerHTML = `
-            <span class="text-[11px] sm:text-xs font-semibold text-slate-300">${item.hour}</span>
+            <span class="text-[11px] sm:text-xs font-semibold text-slate-400">${item.hour}</span>
             <div class="my-2 h-7 w-7 flex items-center justify-center">
               ${getWeatherIcon(item.code, item.isDay, 28)}
             </div>
             <span class="text-xs sm:text-sm font-bold text-white mb-1.5">${item.temp}℃</span>
-            <div class="w-full bg-slate-700/50 h-1 rounded-full overflow-hidden mb-1">
+            <div class="w-full bg-slate-800/80 h-1 rounded-full overflow-hidden mb-1">
               <div class="${barColor} h-full rounded-full" style="width: ${barHeight}%"></div>
             </div>
-            <span class="text-[10px] font-bold ${item.prob >= 50 ? 'text-pink-300' : 'text-slate-300'}">${item.prob}%</span>
+            <span class="text-[10px] font-bold ${item.prob >= 50 ? 'text-slate-200' : 'text-slate-400'}">${item.prob}%</span>
           `;
           hourlyTimeline.appendChild(col);
         });
