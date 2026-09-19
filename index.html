@@ -50,7 +50,7 @@
       --bg-grad-2: #242436;
       --bg-grad-3: #0e121a;
       --accent-glow: rgba(99, 102, 241, 0.16);
-      --glass-bg: rgba(25, 30, 44, 0.55);
+      --glass-bg: rgba(255, 255, 255, 0.05);
       --glass-border: rgba(255, 255, 255, 0.08);
       --glass-border-focus: rgba(255, 255, 255, 0.22);
     }
@@ -405,23 +405,38 @@
       `;
     }
 
+    /* Foldable Umbrella SVG with matching rain drops */
     function getFoldableUmbrellaSVG(size = 88) {
       return `
         <svg class="icon-chic" width="${size}" height="${size}" viewBox="0 0 100 100" fill="none">
           <defs>
-            <linearGradient id="chic-fold-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <linearGradient id="chic-fold-grad" x1="20%" y1="0%" x2="80%" y2="100%">
               <stop offset="0%" stop-color="#9aa2b4" />
+              <stop offset="50%" stop-color="#838c9e" />
               <stop offset="100%" stop-color="#6a7283" />
             </linearGradient>
+            <linearGradient id="chic-drop-grad-fold" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#a4acc0" />
+              <stop offset="100%" stop-color="#737c8e" />
+            </linearGradient>
           </defs>
-          <path d="M20 48 C25 31 40 22 55 20 C70 19 82 28 84 45 C78 43 72 46 66 45 C60 44 55 42 50 42 C44 42 39 45 33 45 C27 45 23 43 20 48 Z" 
+          <!-- Raindrops -->
+          <path d="M72 17 C72 13.5, 75 11, 75 11 C75 11, 78 13.5, 78 17 C78 19.5, 76 21, 75 21 C74 21, 72 19.5, 72 17 Z" fill="url(#chic-drop-grad-fold)"/>
+          <path d="M60 11 C60 8, 63 5.5, 63 5.5 C63 5.5, 66 8, 66 11 C66 13, 64.5 14.5, 63 14.5 C61.5 14.5, 60 13, 60 11 Z" fill="url(#chic-drop-grad-fold)"/>
+          <path d="M82 25 C82 22, 85 19.5, 85 19.5 C85 19.5, 88 22, 88 25 C88 27, 86.5 28.5, 85 28.5 C83.5 28.5, 82 27, 82 25 Z" fill="url(#chic-drop-grad-fold)"/>
+          <!-- Top tip -->
+          <path d="M50 16 L50 22" stroke="#6a7283" stroke-width="2.5" stroke-linecap="round"/>
+          <!-- Umbrella Canopy -->
+          <path d="M14 52 C14 31 30 18 50 18 C70 18 86 31 86 52 C81 49 75 51 68 51 C61 51 56 48 50 48 C44 48 39 51 32 51 C25 51 19 49 14 52 Z" 
                 fill="url(#chic-fold-grad)"/>
-          <path d="M52 43 L37 72 C35.5 74.5 32 76 29 74.5 C26 73 25 69.5 27 66.5 L30 60" 
+          <path d="M22 47 C24 36 35 24 50 23" stroke="rgba(255,255,255,0.22)" stroke-width="2" stroke-linecap="round" fill="none"/>
+          <!-- Handle -->
+          <path d="M50 50 L50 73 C50 78.5 45.5 83 40 83 C34.5 83 31 78.5 32 73" 
                 stroke="#636b7b" 
-                stroke-width="4.5" 
+                stroke-width="5" 
                 stroke-linecap="round" 
+                stroke-linejoin="round"
                 fill="none"/>
-          <circle cx="27" cy="74" r="3" fill="#838c9e" />
         </svg>
       `;
     }
